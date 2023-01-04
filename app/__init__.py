@@ -37,7 +37,6 @@ def test():
 def form():
     form = NewCarForm()
     if form.validate_on_submit():
-        print("+++++++MADE IT TO FORM!!!+++++++++")
         dbfuncs.add_new_car(form.manu_year.data, form.make.data,
                             form.model.data, form.owner_id.data)
         return redirect("/")
@@ -45,8 +44,8 @@ def form():
         "title": "NEW CAR FORM!",
         "header": "ADD A NEW CAR 😎"
     }
-    cars = dbfuncs.get_all_cars()  # RENDER CARS ON FORM!
-    owners = dbfuncs.get_all_owners()  # RENDER OWNERS SO THEY KNOW WHO CAN OWN A CAR
+    cars = dbfuncs.get_all_cars() 
+    owners = dbfuncs.get_all_owners()  
     return render_template("page.html", info=info, form=form, cars=cars, owners=owners)
 
 @app.route("/change-owners",methods=('GET', 'POST'))
