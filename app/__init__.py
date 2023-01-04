@@ -21,7 +21,7 @@ def home():
         "header": "THIS IS THE CARS HOME PAGE!"
     }
     cars = dbfuncs.get_all_cars()
-    return render_template('page.html', info=info, cars=cars)
+    pass
 
 
 @app.route('/test')
@@ -30,7 +30,7 @@ def test():
         "title": "Test page",
         "header": "This is the test page"
     }
-    return render_template('page.html', info=info)
+    pass
 
 
 @app.route('/form', methods=('GET', 'POST'))
@@ -46,7 +46,7 @@ def form():
     }
     cars = dbfuncs.get_all_cars() 
     owners = dbfuncs.get_all_owners()  
-    return render_template("page.html", info=info, form=form, cars=cars, owners=owners)
+    pass
 
 @app.route("/change-owners",methods=('GET', 'POST'))
 def change():
@@ -60,4 +60,4 @@ def change():
         "title": "CHANGE OWNER FORM!",
         "header": "CHANGE A CAR'S OWNER 😎"
     }
-    return render_template("page.html", info=info, owner_form=form, cars=cars, owners=owners)
+    pass
