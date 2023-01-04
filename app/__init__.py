@@ -4,7 +4,7 @@ try:
 except:
     dbfuncs.seed()
     
-from flask import Flask, render_template, redirect
+from flask import Flask, redirect
 from .config import Configuration
 from app.forms import NewCarForm, ChangeOwner
 
